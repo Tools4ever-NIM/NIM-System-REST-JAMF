@@ -12,7 +12,9 @@
                         "processing_options": {
                             "output_field": "results"
                         },
-                        "query_parameters": {}
+                        "query_parameters": {
+                            "sort": "id:asc"
+                        }
                     }
                 },
                 "parameters": {},
@@ -32,14 +34,16 @@
                 },
                 "pagination": {
                     "mode": "generic",
-                   "path":[],
+                    "zero_based": true,
+                    "totalAttribute": "totalCount",
                     "params":{
                         "page":"{page_number}",
                         "page-size":"{page_size}"
+
                     }
                 }
             },
-            "authentication": "client_credentials",
+            "authentication": "custom_post_token",
             "call_handling": "generic",
             "test_connection": {
                 "url": "/api/v1/jamf-pro-version"
@@ -48,7 +52,10 @@
         },
         "authOptions": {
             "authUrl": "https://{tenant_id}/api/v1/auth/token",
-            "directToken": true
+            "directToken": true,
+            "useBasicAuthPost": true,
+            "tokenPath": "token",
+            "expiresPath": "expires"
         }
         
     },

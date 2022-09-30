@@ -2,6 +2,103 @@
     "schema": {
         "options": {},
         "crud_objects": {
+            "buildings": {
+                "operations": {
+                    "buildingsList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/v1/buildings"
+                        },
+                        "processing_options": {
+                            "output_field": "results"
+                        },
+                        "query_parameters": {
+                            "sort": "id:asc"
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "name": "string*",
+                    "streetAddress1":"string*",
+                    "streetAddress2":"string*",
+                    "city":"string*",
+                    "stateProvince":"string*",
+                    "zipPostalCode":"string*",
+                    "country":"string*"
+                }
+            },
+            "categories": {
+                "operations": {
+                    "categoriesList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/v1/categories"
+                        },
+                        "processing_options": {
+                            "output_field": "results"
+                        },
+                        "query_parameters": {
+                            "sort": "id:asc"
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "name": "string*",
+                    "priority":"string*"
+                }
+            },
+            "computers": {
+                "operations": {
+                    "computersList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/preview/computers"
+                        },
+                        "processing_options": {
+                            "output_field": "results"
+                        },
+                        "query_parameters": {
+                            "sort": "name:asc"
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "location": {
+                        "building": "_:string*",
+                        "department": "_:string*",
+                        "emailAddress": "_:string*",
+                        "phoneNumber": "_:string*",
+                        "position": "_:string*",
+                        "realName": "_:string*",
+                        "room": "_:string*",
+                        "username": "_:string*"
+                    },
+                    "name": "string*",
+                    "udid":"string*",
+                    "serialNumber":"string*",
+                    "lastContactDate":"string*",
+                    "lastEnrolledDate":"string*",
+                    "operatingSystemVersion":"string*",
+                    "operatingSystemBuild":"string*",
+                    "ipAddress":"string*",
+                    "macAddress":"string*",
+                    "assetTag":"string*",
+                    "modelIdentifier":"string*",
+                    "mdmAccessRights":"string*",
+                    "isManaged":"string*",
+                    "managementId":"string*",
+                    "site":"string*"
+                }
+            },
             "departments": {
                 "operations": {
                     "departmentsList": {
@@ -14,6 +111,27 @@
                         },
                         "query_parameters": {
                             "sort": "id:asc"
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "name": "string*"
+                }
+            },
+            "sites": {
+                "operations": {
+                    "sitesList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/v1/sites"
+                        },
+                        "processing_options": {
+                            "output_field": ""
+                        },
+                        "query_parameters": {
                         }
                     }
                 },

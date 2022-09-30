@@ -1,4 +1,4 @@
 # NIM-System-REST-JAMF
 <p align="center">
-![image](https://user-images.githubusercontent.com/24281600/193328742-97cd8b6a-aad3-48b3-818b-0a75dc1357a1.png)
+<img src="https://user-images.githubusercontent.com/24281600/193328742-97cd8b6a-aad3-48b3-818b-0a75dc1357a1.png" />
 </p>

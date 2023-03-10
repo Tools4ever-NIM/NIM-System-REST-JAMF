@@ -121,6 +121,37 @@
                     "name": "string*"
                 }
             },
+            "mobiledevices": {
+                "operations": {
+                    "sitesList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/v2/mobile-devices"
+                        },
+                        "processing_options": {
+                            "output_field": "results"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "name": "string*",
+                    "serialNumber": "string*",
+                    "wifiMacAddress": "string*",
+                    "udid": "string*",
+                    "phoneNumber": "string*",
+                    "model": "string*",
+                    "modelIdentifier": "string*",
+                    "username": "string*",
+                    "type": "string*",
+                    "managementId": "string*",
+                    "softwareUpdateDeviceId": "string*"
+                }
+            },
             "sites": {
                 "operations": {
                     "sitesList": {
@@ -129,7 +160,7 @@
                             "path": "/api/v1/sites"
                         },
                         "processing_options": {
-                            "output_field": ""
+                            "output_field": "results"
                         },
                         "query_parameters": {
                         }

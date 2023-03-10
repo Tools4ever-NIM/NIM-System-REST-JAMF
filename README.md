@@ -10,6 +10,7 @@
 - Computers
 - Departments
 - Sites
+- Mobile Devices
 
 ## Setup API Access
 - See https://developer.jamf.com/jamf-pro/docs/jamf-pro-api-overview

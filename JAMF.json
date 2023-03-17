@@ -123,7 +123,7 @@
             },
             "mobiledevices": {
                 "operations": {
-                    "sitesList": {
+                    "mobiledevicesList": {
                         "method": "get",
                         "call": {
                             "path": "/api/v2/mobile-devices"
@@ -150,6 +150,204 @@
                     "type": "string*",
                     "managementId": "string*",
                     "softwareUpdateDeviceId": "string*"
+                }
+            },
+            "mobiledevicedetails": {
+                "operations": {
+                    "mobiledevicedetailsList": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "mobiledevices",
+                            "iterator": "id",
+                            "path": "/api/v2/mobile-devices/{iterator}/detail"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    },
+                    "mobiledevicedetailsUpdate": {
+                        "method": "patch",
+                        "removeBlankFields": true,
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/v2/mobile-devices/{id}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "lastInventoryUpdateTimestamp",
+                            "osVersion",
+                            "osBuild",
+                            "osSupplementalBuildVersion",
+                            "osRapidSecurityResponse",
+                            "softwareUpdateDeviceId",
+                            "serialNumber",
+                            "udid",
+                            "initialEntryTimestamp",
+                            "ipAddress",
+                            "wifiMacAddress",
+                            "bluetoothMacAddress",
+                            "deviceOwnershipLevel",
+                            "enrollmentMethod",
+                            "enrollmentSessionTokenValid",
+                            "lastEnrollmentTimestamp",
+                            "mdmProfileExpirationTimestamp",
+                            "managed",
+                            "site_name",
+                            "type",
+                            "ios_capacityMb",
+                            "ios_availableMb",
+                            "ios_percentageUsed",
+                            "ios_model",
+                            "ios_modelIdentifier",
+                            "ios_modelNumber",
+                            "ios_shared",
+                            "ios_supervised",
+                            "ios_batteryLevel",
+                            "ios_lastBackupTimestamp",
+                            "ios_deviceLocatorServiceEnabled",
+                            "ios_doNotDisturbEnabled",
+                            "ios_cloudBackupEnabled",
+                            "ios_lastCloudBackupTimestamp",
+                            "ios_locationServicesEnabled",
+                            "ios_computer",
+                            "ios_bleCapable",
+                            "attachments",
+                            "provisioningProfiles",
+                            "serviceSubscriptions",
+                            "iTunesStoreAccountActive",
+                            "tvos",
+                            "declarativeDeviceManagementEnabled",
+                            "managementId",
+                            "value"
+                        ],
+                        "resource_mandatory": [
+                            "id"
+                        ],
+                        "body": {
+                            "name": "{name}",
+                            "enforceName": "{enforceName}",
+                            "assetTag": "{assetTag}",
+                            "siteId": "{site_id}",
+                            "timeZone": "{timeZone}",
+                            "location": {
+                                "username": "{location_username}",
+                                "realName": "{location_realName}",
+                                "emailAddress": "{location_emailAddress}",
+                                "position": "{location_position}",
+                                "phoneNumber": "{location_phoneNumber}",
+                                "departmentId": "{location_departmentId}",
+                                "buildingId": "{location_buildingId}",
+                                "room": "{location_room}"
+                            }
+
+                        }
+                    },
+                    "mobiledevicedetails_extensionAttributes_set": {
+                        "method": "patch",
+                        "removeBlankFields": true,
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/v2/mobile-devices/{_id}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "_id",
+                            "name",
+                            "value"
+                        ],
+                        "body": {
+                            "updatedExtensionAttributes": [
+                                {
+                                "name" : "{name}",
+                                "value" : [ "{value}" ]
+                              }
+                              ]
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "name": "string*",
+                    "enforceName": "boolean*",
+                    "assetTag": "string*",
+                    "lastInventoryUpdateTimestamp": "string*",
+                    "osVersion": "string*",
+                    "osBuild": "string*",
+                    "osSupplementalBuildVersion": "string*",
+                    "osRapidSecurityResponse": "string*",
+                    "softwareUpdateDeviceId": "string*",
+                    "serialNumber": "string*",
+                    "udid": "string*",
+                    "initialEntryTimestamp": "string*",
+                    "ipAddress": "string*",
+                    "wifiMacAddress": "string*",
+                    "bluetoothMacAddress": "string*",
+                    "deviceOwnershipLevel": "string*",
+                    "enrollmentMethod": "string*",
+                    "enrollmentSessionTokenValid": "boolean*",
+                    "lastEnrollmentTimestamp": "string*",
+                    "mdmProfileExpirationTimestamp": "string*",
+                    "managed": "boolean*",
+                    "timeZone": "string*",
+                    "site": {
+                      "id": "_:string*",
+                      "name": "_:string*"
+                    },
+                    "location": {
+                      "username": "_:string*",
+                      "realName": "_:string*",
+                      "emailAddress": "_:string*",
+                      "position": "_:string*",
+                      "phoneNumber": "_:string*",
+                      "departmentId": "_:string*",
+                      "buildingId": "_:string*",
+                      "room": "_:string*"
+                    },
+                    "type": "string*",
+                    "ios": {
+                      "capacityMb": "_:string*",
+                      "availableMb": "_:string*",
+                      "percentageUsed": "_:string*",
+                      "model": "_:string*",
+                      "modelIdentifier": "_:string*",
+                      "modelNumber": "_:string*",
+                      "shared": "_:boolean*",
+                      "supervised": "_:boolean*",
+                      "batteryLevel": "_:string*",
+                      "lastBackupTimestamp": "_:string*",
+                      "deviceLocatorServiceEnabled": "_:boolean*",
+                      "doNotDisturbEnabled": "_:boolean*",
+                      "cloudBackupEnabled": "_:boolean*",
+                      "lastCloudBackupTimestamp": "_:string*",
+                      "locationServicesEnabled": "_:boolean*",
+                      "computer": "_:string*",
+                      "bleCapable": "_:boolean*",
+                      "attachments": "string*",
+                      "provisioningProfiles": "string*",
+                      "serviceSubscriptions": "string*",
+                      "iTunesStoreAccountActive": "boolean*"
+                    },
+                    "tvos": "string*",
+                    "declarativeDeviceManagementEnabled": "boolean*",
+                    "extensionAttributes": [
+                      {
+                        "id": "string*",
+                        "name": "string*",
+                        "type": "string*",
+                        "value": "string*",
+                        "extensionAttributeCollectionAllowed": "boolean*"
+                      }
+                    ],
+                    "managementId": "string*",
+                    "value":"string*"
                 }
             },
             "sites": {

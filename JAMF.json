@@ -222,7 +222,8 @@
                             "tvos",
                             "declarativeDeviceManagementEnabled",
                             "managementId",
-                            "value"
+                            "value",
+                            "_id"
                         ],
                         "resource_mandatory": [
                             "id"
@@ -347,7 +348,8 @@
                       }
                     ],
                     "managementId": "string*",
-                    "value":"string*"
+                    "value":"string*",
+                    "_id":"string*"
                 }
             },
             "sites": {

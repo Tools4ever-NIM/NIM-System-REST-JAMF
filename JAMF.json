@@ -249,25 +249,23 @@
                     },
                     "mobiledevicedetails_extensionAttributes_set": {
                         "method": "patch",
-                        "removeBlankFields": true,
                         "call": {
                             "mode": "normal",
-                            "path": "/api/v2/mobile-devices/{_id}"
+                            "path": "/api/v2/mobile-devices/{id}"
                         },
-                        "semantics": "update",
                         "resource_allowance_default": "prohibited",
                         "resource_mandatory": [
-                            "_id",
+                            "id",
                             "name",
                             "value"
                         ],
                         "body": {
                             "updatedExtensionAttributes": [
                                 {
-                                "name" : "{name}",
+                                    "name" : "{name}",
                                 "value" : [ "{value}" ]
                               }
-                              ]
+                            ]
                             
                         }
                     }
@@ -340,7 +338,7 @@
                     "declarativeDeviceManagementEnabled": "boolean*",
                     "extensionAttributes": [
                       {
-                        "id": "string*",
+                        "id": "child_id:string*",
                         "name": "string*",
                         "type": "string*",
                         "value": "string*",
@@ -348,8 +346,7 @@
                       }
                     ],
                     "managementId": "string*",
-                    "value":"string*",
-                    "_id":"string*"
+                    "value":"string*"
                 }
             },
             "sites": {

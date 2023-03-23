@@ -11,6 +11,8 @@
 - Departments
 - Sites
 - Mobile Devices
+- Mobile Devices Details
+- Mobile Devices Extension Fields
 
 ## Setup API Access
 - See https://developer.jamf.com/jamf-pro/docs/jamf-pro-api-overview

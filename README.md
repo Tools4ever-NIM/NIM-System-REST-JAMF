@@ -1,4 +1,7 @@
 # NIM-System-REST-JAMF
+
+Read the [JAMF integration documentation](https://docs.nimsuite.com/en/integrations/jamf) for connector details and related guides.
+
 <img src="https://user-images.githubusercontent.com/24281600/193328742-97cd8b6a-aad3-48b3-818b-0a75dc1357a1.png" width="256px" />
 
 ## Data Tables
